@@ -7,5 +7,10 @@
             //some code here
             return true;
         }
+
+        public new string ToString()
+        {
+            return $"King class: {Color} {Name}";
+        }
     }
 }

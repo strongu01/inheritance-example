@@ -1,12 +1,14 @@
-﻿namespace ChessInheritance.Chess
+﻿using System.Collections.Generic;
+
+namespace ChessInheritance.Chess
 {
     abstract class Figure
     {
         #region Properties
 
-        public string Name { get; set; }
-        public string Position { get; set; }
         public string Color { get; set; }
+        public string Name { get; set; }
+        public Dictionary<string, int> Position { get; set; }
 
         #endregion
          
@@ -20,7 +22,7 @@
 
         public override string ToString()
         {
-            return $"{Color} {Name}";
+            return $"Base class: {Color} {Name}";
         }
 
         #endregion
