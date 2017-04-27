@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using ChessInheritence.Chess.ChessBoard;
 
 namespace ChessInheritance.Chess
 {
@@ -8,10 +8,26 @@ namespace ChessInheritance.Chess
 
         public string Color { get; set; }
         public string Name { get; set; }
-        public Dictionary<string, int> Position { get; set; }
+        public Position Position { get; set; }
 
         #endregion
-         
+
+        #region Constructors and Destructors
+
+        public Figure(string name, string color, Position pos = null)
+        {
+            if(pos == null)
+            {
+                pos = new Position('A', 0);
+            }
+
+            Position = pos;
+            Name = name;
+            Color = color;
+        }
+
+        #endregion
+
         #region Protected Methods
 
         protected abstract bool CanBeMoved(string position);
@@ -19,6 +35,11 @@ namespace ChessInheritance.Chess
         #endregion
 
         #region Public Methods
+
+        public string ShortName()
+        {
+            return Color[0].ToString() + Name[0].ToString();
+        }
 
         public override string ToString()
         {
