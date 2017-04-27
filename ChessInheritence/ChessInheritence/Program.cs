@@ -27,11 +27,18 @@ namespace ChessInheritance
             
             board.PrintBoard();
 
+            //Using implemented IEnumerable inteface to print all figures present on the board
+            Console.WriteLine("Figures currently on the board:");
+            foreach(string s in board)
+            {
+                Console.WriteLine(s);
+            }
+
             #endregion
 
             #region Example2
 
-            Console.WriteLine("Inheritnace with a 'new' keyword example");
+            Console.WriteLine("\nInheritnace with a 'new' keyword example");
 
             //Example2
             King k = new King(Colors.White.Name());

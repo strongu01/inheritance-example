@@ -24,7 +24,7 @@ namespace ChessInheritence.Chess.ChessBoard
             {
                 this.X = X;
                 this.Y = Y;
-                iX = charToChessInt(X);
+                this.iX = charToChessInt(X);
             }
             else
             {

@@ -15,6 +15,7 @@ namespace ChessInheritence.Chess.ChessBoard
         public string[,] board;
 
         private const int boardSize = Consts.BOARD_SIZE;
+        private string fillPattern1 = "[X]", fillPattern2 = "[ ]";
 
         #endregion
 
@@ -71,14 +72,23 @@ namespace ChessInheritence.Chess.ChessBoard
 
         public IEnumerator GetEnumerator()
         {
-            int w = 1;
-            List<int> i = new List<int>();
-            foreach(var element in board)
+            List<string> list = new List<string>();
+            string boardCell;
+
+            for(int i = 0; i < boardSize; i++)
             {
-                i.Add(w);
+                for(int j = 0; j < boardSize; j++)
+                {
+                    boardCell = board[i, j];
+
+                    if(!boardCell.Contains(fillPattern1) && !boardCell.Contains(fillPattern2))
+                    {
+                        list.Add(board[i, j]);
+                    }
+                }
             }
 
-            return i.GetEnumerator();            
+            return list.GetEnumerator();
         }
 
         #endregion
