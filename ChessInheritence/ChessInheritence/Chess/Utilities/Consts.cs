@@ -1,4 +1,4 @@
-﻿namespace ChessInheritence.Chess.ChessBoard
+﻿namespace ChessInheritence.Chess.Utilities
 {
     public static class Consts
     {

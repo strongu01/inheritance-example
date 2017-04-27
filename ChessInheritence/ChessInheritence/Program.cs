@@ -1,10 +1,9 @@
 ﻿using ChessInheritance.Chess;
 using ChessInheritance.Chess.Figures;
 using ChessInheritence.Chess.ChessBoard;
-using ChessInheritence.Chess.Utilities;
-using System.Collections.Generic;
 using System;
 using ChessInheritence.Chess.Figures.Colors;
+using ChessInheritence.Chess.Utilities.Extensions;
 
 namespace ChessInheritance
 {
@@ -20,11 +19,11 @@ namespace ChessInheritance
             ChessBoard board = new ChessBoard();
 
             //Example1
-            Pawn p = new Pawn(Colors.Black.Name(), new Position('B', 2));
-            board[p] = p.ShortName();
+            Pawn p = new Pawn(Colors.Black.Name());
+            board[p, new Position('B', 2)] = p.ShortName();
 
-            Queen q = new Queen(Colors.White.Name(), new Position('C', 7));
-            board[q] = q.ShortName();
+            Queen q = new Queen(Colors.White.Name());
+            board[q, new Position('C', 7)] = q.ShortName();
             
             board.PrintBoard();
 

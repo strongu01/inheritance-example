@@ -1,12 +1,14 @@
 ﻿using ChessInheritance.Chess;
 using ChessInheritence.Chess.Utilities;
+using ChessInheritence.Chess.Utilities.Extensions;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace ChessInheritence.Chess.ChessBoard
 {
-    class ChessBoard
+    sealed class ChessBoard : IEnumerable
     {
         #region Fields
 
@@ -24,17 +26,16 @@ namespace ChessInheritence.Chess.ChessBoard
 
         #region Properties
 
-        public string this[Figure f]
+        public string this[Figure f, Position pos]
         {
             get
             {
-                Position figurePos = f.Position;
-                return board[figurePos.iX, figurePos.Y];
+                return board[pos.iX, pos.Y];
             }
             set
             {
-                Position figurePos = f.Position;
-                board[figurePos.iX, f.Position.Y] = value;
+                f.Position = pos;
+                board[pos.iX, pos.Y] = value;
             }
         }
 
@@ -67,7 +68,19 @@ namespace ChessInheritence.Chess.ChessBoard
 
             Console.WriteLine(temp);
         }
-        
+
+        public IEnumerator GetEnumerator()
+        {
+            int w = 1;
+            List<int> i = new List<int>();
+            foreach(var element in board)
+            {
+                i.Add(w);
+            }
+
+            return i.GetEnumerator();            
+        }
+
         #endregion
     }
 }

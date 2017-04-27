@@ -7,7 +7,7 @@ namespace ChessInheritance.Chess.Figures
         private const string NAME = "King";
 
         public King(string color, Position pos = null)
-            : base(NAME, color, pos)
+            : base(NAME, color)
         {
         }
 

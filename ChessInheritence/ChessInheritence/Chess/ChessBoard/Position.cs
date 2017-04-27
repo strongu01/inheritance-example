@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChessInheritence.Chess.Utilities;
+using System;
 
 namespace ChessInheritence.Chess.ChessBoard
 {

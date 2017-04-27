@@ -1,4 +1,4 @@
-﻿namespace ChessInheritence.Chess.Utilities
+﻿namespace ChessInheritence.Chess.Utilities.Extensions
 {
     public static class ArrayExtension
     {

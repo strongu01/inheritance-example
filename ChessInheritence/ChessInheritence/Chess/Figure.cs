@@ -14,14 +14,8 @@ namespace ChessInheritance.Chess
 
         #region Constructors and Destructors
 
-        public Figure(string name, string color, Position pos = null)
+        public Figure(string name, string color)
         {
-            if(pos == null)
-            {
-                pos = new Position('A', 0);
-            }
-
-            Position = pos;
             Name = name;
             Color = color;
         }

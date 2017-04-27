@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chess\ChessBoard\ChessBoard.cs" />
-    <Compile Include="Chess\ChessBoard\Consts.cs" />
+    <Compile Include="Chess\Utilities\Consts.cs" />
     <Compile Include="Chess\ChessBoard\Position.cs" />
     <Compile Include="Chess\Figure.cs" />
     <Compile Include="Chess\Figures\Bishop.cs" />
@@ -52,8 +52,8 @@
     <Compile Include="Chess\Figures\King.cs" />
     <Compile Include="Chess\Figures\Pawn.cs" />
     <Compile Include="Chess\Figures\Queen.cs" />
-    <Compile Include="Chess\Utilities\EnumExtensions.cs" />
-    <Compile Include="Chess\Utilities\ArrayExtension.cs" />
+    <Compile Include="Chess\Utilities\Extensions\EnumExtensions.cs" />
+    <Compile Include="Chess\Utilities\Extensions\ArrayExtension.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
