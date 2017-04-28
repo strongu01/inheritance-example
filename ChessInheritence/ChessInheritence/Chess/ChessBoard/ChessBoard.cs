@@ -12,17 +12,16 @@ namespace ChessInheritence.Chess.ChessBoard
     {
         #region Fields
 
-        public string[,] board;
-
         private const int boardSize = Consts.BOARD_SIZE;
         private string fillPattern1 = "[X]", fillPattern2 = "[ ]";
+        private string[,] board;
 
         #endregion
 
         public ChessBoard()
         {
             board = new string[boardSize, boardSize];
-            board.Fill("[X]", "[ ]", boardSize);
+            board.Fill(fillPattern1, fillPattern2, boardSize);
         }
 
         #region Properties
@@ -92,5 +91,20 @@ namespace ChessInheritence.Chess.ChessBoard
         }
 
         #endregion
+    }
+
+    static class ChessBoardExtensions
+    {
+        public static int FigureCount(this ChessBoard board)
+        {
+            int count = 0;
+
+            foreach(var b in board)
+            {
+                count++;
+            }
+
+            return count;
+        }
     }
 }

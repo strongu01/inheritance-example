@@ -18,21 +18,24 @@ namespace ChessInheritance
             //Filling in the chess board
             ChessBoard board = new ChessBoard();
 
-            //Example1
-            Pawn p = new Pawn(Colors.Black.Name());
-            board[p, new Position('B', 2)] = p.ShortName();
+            //Example1 - creating and changing the position
+            Pawn p = new Pawn(Colors.Black.Name(), new Position('B', 2));
+            board[p, new Position('B', 2)] = p.ShortName(); //Each position change will raise the event
 
             Queen q = new Queen(Colors.White.Name());
             board[q, new Position('C', 7)] = q.ShortName();
-            
+
             board.PrintBoard();
 
             //Using implemented IEnumerable inteface to print all figures present on the board
             Console.WriteLine("Figures currently on the board:");
-            foreach(string s in board)
+            foreach (string s in board)
             {
                 Console.WriteLine(s);
             }
+
+            int figuresOnBoard = board.FigureCount(); // <- using an extension method
+            Console.WriteLine("Number of figures on board: " + figuresOnBoard);
 
             #endregion
 
