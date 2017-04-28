@@ -44,11 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chess\ChessBoard\ChessBoard.cs" />
+    <Compile Include="Chess\Figures\FigureFactory.cs" />
     <Compile Include="Chess\Utilities\Consts.cs" />
     <Compile Include="Chess\ChessBoard\Position.cs" />
     <Compile Include="Chess\Figure.cs" />
     <Compile Include="Chess\Figures\Bishop.cs" />
-    <Compile Include="Chess\Figures\Colors\Colors.cs" />
+    <Compile Include="Chess\Figures\Enums\Enums.cs" />
     <Compile Include="Chess\Figures\King.cs" />
     <Compile Include="Chess\Figures\Pawn.cs" />
     <Compile Include="Chess\Figures\Queen.cs" />

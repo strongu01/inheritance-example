@@ -12,13 +12,27 @@ namespace ChessInheritence.Chess.ChessBoard
     {
         #region Fields
 
+        private static readonly ChessBoard chessBoard = new ChessBoard();
+
         private const int boardSize = Consts.BOARD_SIZE;
         private string fillPattern1 = "[X]", fillPattern2 = "[ ]";
         private string[,] board;
 
         #endregion
 
-        public ChessBoard()
+        public static ChessBoard Instance
+        {
+            get
+            {
+                return chessBoard;
+            }
+        }
+
+        static ChessBoard()
+        {
+        }
+
+        private ChessBoard()
         {
             board = new string[boardSize, boardSize];
             board.Fill(fillPattern1, fillPattern2, boardSize);

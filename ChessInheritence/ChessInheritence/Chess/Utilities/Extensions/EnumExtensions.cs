@@ -1,4 +1,4 @@
-﻿using ChessInheritence.Chess.Figures.Colors;
+﻿using ChessInheritence.Chess.Figures.Enums;
 using System;
 
 namespace ChessInheritence.Chess.Utilities.Extensions

@@ -2,8 +2,9 @@
 using ChessInheritance.Chess.Figures;
 using ChessInheritence.Chess.ChessBoard;
 using System;
-using ChessInheritence.Chess.Figures.Colors;
 using ChessInheritence.Chess.Utilities.Extensions;
+using ChessInheritence.Chess.Figures;
+using ChessInheritence.Chess.Figures.Enums;
 
 namespace ChessInheritance
 {
@@ -16,13 +17,13 @@ namespace ChessInheritance
             Console.WriteLine("Chess board example");
 
             //Filling in the chess board
-            ChessBoard board = new ChessBoard();
+            ChessBoard board = ChessBoard.Instance;
 
             //Example1 - creating and changing the position
-            Pawn p = new Pawn(Colors.Black.Name(), new Position('B', 2));
+            Figure p = FigureFactory.CreateFigure(FigureType.Pawn, Colors.Black, new Position('B', 2));
             board[p, new Position('B', 2)] = p.ShortName(); //Each position change will raise the event
 
-            Queen q = new Queen(Colors.White.Name());
+            Figure q = FigureFactory.CreateFigure(FigureType.Queen, Colors.White);
             board[q, new Position('C', 7)] = q.ShortName();
 
             board.PrintBoard();
